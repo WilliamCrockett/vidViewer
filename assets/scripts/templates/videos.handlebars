@@ -1,0 +1,16 @@
+<tr class='header_row'>
+  <th>Name</th>
+  <th>Date</th>
+  <th>Delete</th>
+</tr>
+
+{{#each videos as |video|}}
+
+ <tr class ="video_row" data-id="{{video.id}}">
+   <td>{{video.name}}</td>
+   <td>{{video.date}}</td>
+   <td><button class="btn btn-default delete_record" data-id="{{video.id}}">Delete?</span></td>
+ </tr>
+
+
+{{/each}}
