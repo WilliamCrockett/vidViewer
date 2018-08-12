@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>VidViewer</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <div class="container-fluid">
+        <!-- Nav bar -->
+        <nav class="navbar navbar-default" id="navbar">
+          <div class="container-fluid">
+            <div class="navbar-header">
+                <!-- <button type="button" class="btn btn-default navbar-btn settings" data-toggle="modal" data-target="#editUserSettings" id="settingsButton">Settings</button> -->
+                <button type="button" class="btn btn-default navbar-btn sign-out" id="signOut">Sign Out</button>
+            </div>
+          </div>
+        </nav>
+
+        <!-- signIn -->
+        <!-- event handler added on form submit -->
+        <form class="sign-in-form" id="signInForm">
+            <div class="col-md-4 sign-in-main row">
+                <div class="sign-in">
+                  <h2 class="sign-in">Sign In</h2>
+                    <div class="sign-in-error"><p>There was an error while signing in. Please check credentials and try again</p></div>
+
+                    <div class="row">
+                      <label for="Emaill Address" class="col-sm-3 control-label pad-5">Email Address</label>
+                      <div class="col-sm-9 pad-5">
+                        <input type="email" name="credentials[email]" class="form-control" id="signInEmail" placeholder="Email Address" required>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <label for="inputPassword3" class="col-sm-3 control-label pad-5">Password</label>
+                      <div class="col-sm-9 pad-5">
+                        <input type="password" name="credentials[password]" class="form-control" id="inputPassword" placeholder="Password" required>
+                      </div>
+                  </div>
+
+                  <div class="sign-in pad-5">
+                    <button type="submit" class="btn btn-default btn-sign-in pad-5" id="signInButton">Sign In</button>
+                  </div>
+                </div>
+            </div>
+          </form>
+
+        <!-- crew content table -->
+        <!-- event handler added for on row click -->
+        <div class="container">
+          <button class="btn btn-primary back-to-list" id="backToList">Back to videos</button>
+          <div class="main-header">
+              <h1>Magic VidViewer</h1>
+          </div>
+          <div class="content-table" id="contentTable">
+            <table class="table table-striped table-hover" id="videosTable">
+              <!-- placeholders -->
+              <tr class='header_row'>
+                <td>Name</td>
+                <td>Date</td>
+                <td>Delete</td>
+              </tr>
+            </table>
+          </div>
+          <div class="vid-container embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" id="videoPlayer" width="560" height="315" src="https://www.youtube-nocookie.com/embed/H4OO56w3BpI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="modal fade" tabindex="-1" role="dialog" id="confirmDelete">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Delete video with id: <span id="videoIDDelete">"UserID"</span></h4>
+            </div>
+            <div class="modal-body">
+              <!-- <p>You sure you wanna delete this record bro? There's no going back!</p> -->
+              <p>Sorry, you dont have permission to do this...</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Dismiss</button>
+              <!-- <button type="button" class="btn btn-primary" id="deleteRecordConfirmation">Yeah bro, doit toit</button> -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </body>
+</html>
